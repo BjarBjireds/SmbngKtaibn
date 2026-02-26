@@ -143,7 +143,7 @@ logConn = LogService.MessageOut:Connect(function(message, type)
     end
 end)
 
-local url = "https://raw.githubusercontent.com/BjarBjireds/SmbngKtaibn/refs/heads/main/dictionary%20smbngkata(updated)"
+local url = "https://raw.githubusercontent.com/BjarBjireds/SmbngKtaibn/refs/heads/main/dict%20smbungkata(updated)"
 local fileName = "ultimate_words_v4.txt"
 
 -- Temporary Loading UI
