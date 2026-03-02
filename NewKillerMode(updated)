@@ -269,29 +269,33 @@ end
 -- Table skor: suffix panjang dulu (skor tinggi), baru huruf tunggal
 local HardSuffixScores = {
     -- Tier super trap / killer (skor 10) - prioritas tertinggi
-    pse  = 10, zat  = 10, nti  = 10, nh   = 10,
+    zat  = 10,
     lp   = 10, aib  = 10,
     mp   = 10, tm   = 10, rs   = 10,
-    ui   = 10, nk   = 10,
+    ui   = 10,
     sb   = 10, nja  = 10,
     ks   = 10,
-    nsi  = 10,
+    gn   = 10, oe   = 10, eo   = 10,
 
-    -- Skor sedang (5) - jelek tapi tidak separah tier 10
-    pp   = 5, tt   = 5, bb   = 5, hg   = 5,
-    tb   = 5, hl   = 5,
-    x    = 5,
-    ng   = 5,
+    -- Skor sedang-rendah (5)
+    pp   = 5, tt   = 5, bb   = 5,
+    hl   = 5,
+    gm   = 5, zul  = 5, yub  = 5,
+
+    -- Skor sangat rendah (2) - jelek tapi masih agak bisa ditolerir
+    x    = 2,
+    ng   = 2,
 }
 
 local function GetKillerScore(word)
     -- List semua suffix killer, diurutkan dari PANJANG → PENDEK
     -- biar match yang paling spesifik dulu
     local killerSuffixes = {
-        "nti", "aib", "nja", "nsi",    -- 3 huruf
-        "pse", "zat", "nh", "lp", "mp", "tm", "rs",
-        "hg", "ui", "nk", "sb", "ks", "pp", "tt", "bb", "tb", "hl",  -- 2 huruf
-        "x", "ng"                      -- 1 huruf (skor lebih rendah)
+        "aib", "nja", "zul", "yub",    -- 3 huruf
+        "zat", "lp", "mp", "tm", "rs",
+        "ui", "sb", "ks", "pp", "tt", "bb", "hl",  -- 2 huruf (nh, hg, tb sudah dihapus)
+        "gn", "gm", "oe", "eo",        -- 2 huruf
+        "x", "ng"                      -- 1 huruf (skor sangat rendah sekarang)
     }
     
     for _, suf in ipairs(killerSuffixes) do
